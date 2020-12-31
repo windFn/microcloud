@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: turbine
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@eureka1:8763/eureka,http://admin:admin123@eureka2:8764/eureka,http://admin:admin123@eureka3:8765/eureka
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+#监控url：http://turbine-hostname:port/turbine.stream?cluster=[clusterName]
+#turbine:
+#  aggregator:
+#    clusterConfig: MICROCLOUD-PROVIDER,MICROCLOUD-PROVIDER-TWO
+#  appConfig: MICROCLOUD-PROVIDER,MICROCLOUD-PROVIDER-TWO
+
+#监控url:http://turbine-hostname:port/turbine.stream
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: MICROCLOUD-PROVIDER,MICROCLOUD-PROVIDER-TWO
+  cluster-name-expression: "'default'"

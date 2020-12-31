@@ -1,0 +1,19 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@eureka1:8763/eureka,http://admin:admin123@eureka2:8764/eureka,http://admin:admin123@eureka3:8765/eureka
+    register-with-eureka: false
+zuul:
+  routes:
+    microcloud-provider: 
+      path: /provider/**
+      service-id: microcloud-provider
+    microcloud-provider-two: 
+      path: /provider2/**
+      service-id: microcloud-provider-two      
+  prefix: /microcloud 

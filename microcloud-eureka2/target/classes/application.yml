@@ -1,0 +1,22 @@
+server:
+  port: 8764
+eureka:
+  client:
+    #是否将自己注册到Eureka-Server中，默认的为true
+    register-with-eureka: false
+    #是否从Eureka-Server中获取服务注册信息，默认为true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://admin:admin123@eureka1:8763/eureka,http://admin:admin123@eureka2:8764/eureka,http://admin:admin123@eureka3:8765/eureka
+  instance:
+    hostname: eureka2
+  server:
+    eviction-interval-timer-in-ms: 10000
+    enable-self-preservation: false
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123
+  application:
+    name: eureka

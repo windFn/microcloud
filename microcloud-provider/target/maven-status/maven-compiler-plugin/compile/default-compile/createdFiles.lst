@@ -1,0 +1,5 @@
+com\gf\mapper\ProductMapper.class
+com\gf\ProviderApp.class
+com\gf\service\ProductService.class
+com\gf\controller\ProductController.class
+com\gf\service\impl\ProductServiceImpl.class

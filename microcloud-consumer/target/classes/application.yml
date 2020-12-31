@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: consumer
+server:
+   port: 80        
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@eureka1:8763/eureka,http://admin:admin123@eureka2:8764/eureka,http://admin:admin123@eureka3:8765/eureka
+    register-with-eureka: false
+    
+MICROCLOUD-PROVIDER:
+  ribbon: 
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+MICROCLOUD-PROVIDER-TWO:
+  ribbon: 
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+feign:
+  hystrix:
+    enabled: true

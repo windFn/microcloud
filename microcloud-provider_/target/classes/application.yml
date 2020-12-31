@@ -1,0 +1,62 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: microcloud-provider-two
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat,wall
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 5000
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin123
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.gf.entry
+logging:
+  level:
+    com.gf.mapper: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@eureka1:8763/eureka,http://admin:admin123@eureka2:8764/eureka,http://admin:admin123@eureka3:8765/eureka
+  instance:
+    instance-id: microcloud-provider-two-1
+    prefer-ip-address: true
+    #心跳检测间隔时间
+    lease-renewal-interval-in-seconds: 10
+    #过期时间
+    lease-expiration-duration-in-seconds: 20
+info:
+  app.name: microcloud-provider-two-1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
