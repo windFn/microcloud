@@ -22,6 +22,7 @@
 		<module>microcloud-hystrix-js</module>
 		<module>microcloud-zuul</module>
 		<module>microcloud-security</module>
+		<module>microcloud-sql</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
