@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gf.entry.Product;
 import com.gf.service.ProductService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 /**
  * <p>Description: </p> 

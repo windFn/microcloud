@@ -3,7 +3,6 @@ package com.gf.filter;
 import java.util.Base64;
 
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
-import org.springframework.stereotype.Component;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -13,7 +12,6 @@ import com.netflix.zuul.exception.ZuulException;
  * @author ganF
  * @date 2020-12-31
  */
-@Component
 public class AuthFilter extends ZuulFilter{
 
 	@Override

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+     config:
+        server:
+          git:
+            uri: https://github.com/windFn/config.git #配置文件所在仓库
+            username: 1476246230@qq.com #登录账号
+            password: 13870982563gf #登录密码
+            default-label: master #配置文件分支
+            search-paths: eureka  #配置文件所在根目录

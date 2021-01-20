@@ -1,0 +1,23 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes: 
+      - id: microcloud-provider
+        uri: lb://microcloud-provider
+        predicates:
+        - Path=/microcloud/provider/**
+        filters:
+        - StripPrefix=2
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:admin123@eureka1:8763/eureka,http://admin:admin123@eureka2:8764/eureka,http://admin:admin123@eureka3:8765/eureka

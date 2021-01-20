@@ -9,12 +9,12 @@ eureka:
       defaultZone: http://admin:admin123@eureka1:8763/eureka,http://admin:admin123@eureka2:8764/eureka,http://admin:admin123@eureka3:8765/eureka
     register-with-eureka: false
     
-MICROCLOUD-PROVIDER:
-  ribbon: 
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-MICROCLOUD-PROVIDER-TWO:
+microcloud-provider:
   ribbon: 
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+microcloud-provider-two:
+  ribbon: 
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 feign:
   hystrix:
     enabled: true

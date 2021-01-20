@@ -55,6 +55,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
 info:
   app.name: microcloud-provider
+
 management:
   endpoints:
     web:

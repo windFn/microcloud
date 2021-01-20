@@ -16,4 +16,4 @@ zuul:
     microcloud-provider-two: 
       path: /provider2/**
       service-id: microcloud-provider-two      
-  prefix: /microcloud 
+  prefix: /microcloud

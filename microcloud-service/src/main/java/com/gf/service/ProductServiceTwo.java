@@ -16,7 +16,7 @@ import com.gf.service.impl.FallBackProductTwo;
  * @author ganF
  * @date 2020-12-21
  */
-@FeignClient(name="MICROCLOUD-PROVIDER-TWO",configuration= FeignConfig.class,fallback=FallBackProductTwo.class)
+@FeignClient(name="microcloud-provider-two",configuration= FeignConfig.class,fallback=FallBackProductTwo.class)
 public interface ProductServiceTwo {
 	@RequestMapping("/product/get/{id}")
 	public Product get(@PathVariable(value="id") Integer id);
